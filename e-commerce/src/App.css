@@ -120,15 +120,22 @@
     "Lucida Sans", Arial, sans-serif;
   font-size: 14px;
   width: 100%;
-  height: 40px;
+  height: 60px;
 }
 
 .products button {
   padding: 8px;
-  background-color: rgb(254, 88, 88);
+  background-color: rgb(250, 130, 130);
   color: white;
   border: none;
   border-radius: 100px;
+  font-weight:600;
+}
+
+.products button:hover {
+  padding: 8px;
+  background-color: rgb(254, 88, 88);
+  transition: 0.3s ease-in-out;
 }
 
 .shoppingCartColumn {
@@ -136,13 +143,14 @@
 }
 
 .shoppingCart {
-  margin-right: 40px;
-  float: right;
   color: grey;
+  float:right;
+ 
+  padding-right:40px;
 }
 
 .shoppingCart:hover {
-  color: rgb(250, 139, 139);
+  color: rgb(255, 124, 124);
 }
 
 @media screen and (max-width: 891px) {
@@ -181,12 +189,14 @@
   .mobile {
     display: block;
     align-items: center;
+    
   }
 
   .mobile i {
     font-size: 24px;
     cursor: pointer;
     padding: 20px;
+    
   }
 
   .mobile i:hover {
@@ -195,8 +205,9 @@
   }
 
   .shoppingCart {
-    margin-right: 22px;
-    position:sticky;
+   margin:0;
+   font-size: large;
+   padding-right:20px;
   }
 }
 

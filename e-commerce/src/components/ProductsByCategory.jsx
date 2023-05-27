@@ -11,7 +11,7 @@ export const ProductsByCategory = ({ category }) => {
     getProductsByCategory(category).then((res) => {
       setProducts(res);
     });
-  }, []);
+  }, [category]);
   if (!products) {
     return <h1>Loading</h1>;
   } else {
@@ -19,7 +19,7 @@ export const ProductsByCategory = ({ category }) => {
       <div className="productscontainer">
         {products.map((product) => {
           return (
-            <div key={product.title}>
+            <div key={product.id}>
               <Product product={product} category={category} />
             </div>
           );

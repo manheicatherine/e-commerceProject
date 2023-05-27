@@ -19,7 +19,7 @@ export const Categories = () => {
         const upperLetter = category.toUpperCase();
         return (
          <> 
-         <h1 key={uuidv4}>{upperLetter}</h1><br />
+         <h1 key={`${category}${uuidv4}`}>{upperLetter}</h1><br />
          <ProductsByCategory category={category}/>
          </>
         );

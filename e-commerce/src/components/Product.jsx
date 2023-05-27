@@ -1,21 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
-import { ProductsContext } from '../contents/Cart';
+import { ProductsContext } from "../contents/Cart";
 
+export const Product = ({ product, category, cartItmes,setCartItems }) => {
 
-export const Product = ({ product, category }) => {
-  const {items, setItems } =useContext(ProductsContext)
   let { id } = useParams();
-//  console.log(items,"Product.jsx")
-  useEffect(()=>{
 
-  },[])
+  useEffect(() => {}, []);
 
   const handleClick = (item) => {
-    setItems(items =>[...items, item])
-
-   }
+    // setItems((items) => [...items, item]);
+  };
 
   return (
     <div className="products">
@@ -37,10 +33,9 @@ export const Product = ({ product, category }) => {
 
       <h1>{product.title} </h1>
       <h1>£{product.price} </h1>
-
-      <button onClick={()=>handleClick(product)}>Add To Cart</button>
+      <button
+       onClick={() => handleClick(product)}
+       >Add To Cart</button>
     </div>
   );
-
-
 };
