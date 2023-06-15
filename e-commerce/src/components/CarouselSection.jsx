@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import { useEffect, useState } from "react";
+
 import { getProducts } from "../utils/api";
 
-
-export  function CarouselSection() {
+export function CarouselSection() {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     getProducts().then((res) => {
       setProducts(res);
     });
   });
+
   return (
     <Carousel
-      className="carousel "
+      className="carousel"
       controls={false}
       interval={3000}
       fade={true}

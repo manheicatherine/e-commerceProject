@@ -124,15 +124,24 @@
 }
 
 .products button {
+  margin-left: 3px;
+  margin-right: 3px;
+  border: none;
+  border-radius: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.addToCart {
   padding: 8px;
   background-color: rgb(250, 130, 130);
   color: white;
   border: none;
   border-radius: 100px;
-  font-weight:600;
+  font-weight: 600;
 }
 
-.products button:hover {
+.addToCart:hover {
   padding: 8px;
   background-color: rgb(254, 88, 88);
   transition: 0.3s ease-in-out;
@@ -144,14 +153,42 @@
 
 .shoppingCart {
   color: grey;
-  float:right;
- 
-  padding-right:40px;
+  margin: 0;
+  font-size: larger;
+  float: right;
+  padding-right: 30px;
 }
 
 .shoppingCart:hover {
   color: rgb(255, 124, 124);
 }
+
+.shoppingcartcontainer{
+  text-align: center;
+
+}
+
+.backtohome {
+  padding: 8px;
+  background-color: rgb(250, 130, 130);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-weight: 600;
+  
+}
+
+
+.amountBlock{
+  
+  vertical-align: middle;
+  display: inline-block;
+
+}
+
+
+
+
 
 @media screen and (max-width: 891px) {
   .header {
@@ -189,14 +226,12 @@
   .mobile {
     display: block;
     align-items: center;
-    
   }
 
   .mobile i {
     font-size: 24px;
     cursor: pointer;
     padding: 20px;
-    
   }
 
   .mobile i:hover {
@@ -205,9 +240,10 @@
   }
 
   .shoppingCart {
-   margin:0;
-   font-size: large;
-   padding-right:20px;
+    margin: 0;
+    font-size: large;
+    float: right;
+    padding-right: 20px;
   }
 }
 

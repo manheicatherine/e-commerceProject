@@ -1,30 +1,30 @@
-import React from 'react'
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+
+import { ProductsByCategory } from "./ProductsByCategory";
 import { getCategories } from "../utils/api";
-import { ProductsByCategory } from './ProductsByCategory';
-import { v4 as uuidv4 } from 'uuid';
 
 export const Categories = () => {
-    const [categories, setCategrories] = useState([]);
-    
-    useEffect(() => {
-        getCategories().then((res) => {
-          setCategrories(res);
-        });
-      },[]);
+  const [categories, setCategrories] = useState([]);
+
+  useEffect(() => {
+    getCategories().then((res) => {
+      setCategrories(res);
+    });
+  }, []);
 
   return (
-    <div className='containercolumn'>
+    <div className="containercolumn">
       {categories.map((category) => {
         const upperLetter = category.toUpperCase();
+
         return (
-         <> 
-         <h1 key={`${category}${uuidv4}`}>{upperLetter}</h1><br />
-         <ProductsByCategory category={category}/>
-         </>
+          <div key={category}>
+            <h1>{upperLetter}</h1>
+            <br />
+            <ProductsByCategory category={category} />
+          </div>
         );
       })}
-
-  </div>
-  )
-}
+    </div>
+  );
+};

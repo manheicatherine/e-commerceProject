@@ -1,21 +1,25 @@
-import "./App.css";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+
 import { Home } from "./components/Home";
 import { ProductPage } from "./components/ProductPage";
-import {  useState } from "react";
-import { CartContext } from "./contents/Cart";
+import { ShoppingCart } from "./components/ShoppingCart";
+
+import "./App.css";
 
 function App() {
- const [cartItmes,setCartItems]=useState([])
+ 
+
 
   return (
     <div className="App">
-      <CartContext.Provider value={{cartItmes,setCartItems}}>
-        <Routes>
-          <Route path={`/`} element={<Home />} />
-          <Route path={`/:category`} element={<ProductPage />} />
-        </Routes>
-      </CartContext.Provider>
+      <Routes>
+        <Route path={`/`} element={<Home />} /> // refactored
+        <Route path={`/:category`} element={<ProductPage  /> }/>
+        {/* <Route path={`/:category/:id`} element={<  /> }/> */}
+
+        <Route path={`/shoppingcart`} element={<ShoppingCart />} />
+      </Routes>
     </div>
   );
 }

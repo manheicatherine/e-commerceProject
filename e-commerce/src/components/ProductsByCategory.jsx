@@ -1,8 +1,7 @@
-import { getProductsByCategory } from "../utils/api";
-import { useEffect, useState } from "react";
-import React from "react";
-import { Product } from "./Product";
+import React, { useEffect, useState } from "react";
 
+import { Product } from "./Product";
+import { getProductsByCategory } from "../utils/api";
 
 export const ProductsByCategory = ({ category }) => {
   const [products, setProducts] = useState([]);
@@ -12,19 +11,23 @@ export const ProductsByCategory = ({ category }) => {
       setProducts(res);
     });
   }, [category]);
+
   if (!products) {
     return <h1>Loading</h1>;
-  } else {
-    return (
-      <div className="productscontainer">
-        {products.map((product) => {
-          return (
-            <div key={product.id}>
-              <Product product={product} category={category} />
-            </div>
-          );
-        })}
-      </div>
-    );
   }
+
+  return (
+    <div className="productscontainer">
+      {products.map((product) => {
+        return (
+          <div key={product.id}>
+            <Product
+              product={product}
+              category={category}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
 };

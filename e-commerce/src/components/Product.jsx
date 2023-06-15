@@ -1,17 +1,31 @@
-import React, { useEffect, useState } from "react";
+
 import { Link, useParams } from "react-router-dom";
-import { useContext } from "react";
-import { ProductsContext } from "../contents/Cart";
 
-export const Product = ({ product, category, cartItmes,setCartItems }) => {
-
+export const Product = ({ product, category }) => {
   let { id } = useParams();
 
-  useEffect(() => {}, []);
 
   const handleClick = (item) => {
-    // setItems((items) => [...items, item]);
+
+    const items = JSON.parse(localStorage.getItem("cartItems"));
+  const updateItem = items.map((productInCart)=>{
+    if (productInCart.id === item.id )
+      productInCart.quantity = productInCart.quantity + 1;
+      return productInCart;
+    
+    
+  })
+
+  item.quantity = 1;
+   
+  localStorage.setItem(
+    "cartItems",
+    JSON.stringify(items ? [ item, ...items] : [item])
+  );
+
+   
   };
+
 
   return (
     <div className="products">
@@ -30,12 +44,18 @@ export const Product = ({ product, category, cartItmes,setCartItems }) => {
           alt={product.title}
         />
       )}
-
       <h1>{product.title} </h1>
       <h1>£{product.price} </h1>
+
       <button
-       onClick={() => handleClick(product)}
-       >Add To Cart</button>
+        type="button"
+        className="addToCart"
+        onClick={() => handleClick(product)}
+      >
+        Add To Cart
+      </button>
+     
+     
     </div>
   );
 };
