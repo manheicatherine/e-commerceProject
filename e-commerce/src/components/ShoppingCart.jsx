@@ -60,7 +60,7 @@ export const ShoppingCart = () => {
                   >
                     -
                   </button>
-                  <h2>£{totalPrice}</h2>
+                  <h2>Total Price: £{totalPrice}</h2>
                 </div>
               </div>
             );
