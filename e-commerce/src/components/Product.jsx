@@ -20,11 +20,7 @@ export const Product = ({ product, category }) => {
       localStorage.setItem("cartItems", JSON.stringify([item]));
     }
 
-    //item.quantity = 1;
-    // localStorage.setItem(
-    //   "cartItems",
-    //   JSON.stringify(items ? [ item, ...items] : [item])
-    // );
+  
   };
 
   return (
