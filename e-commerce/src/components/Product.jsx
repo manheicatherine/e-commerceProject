@@ -40,8 +40,8 @@ export const Product = ({ product, category }) => {
           alt={product.title}
         />
       )}
-      <h1>{product.title} </h1>
-      <h1>£{product.price} </h1>
+      <h1 className="productTitle">{product.title} </h1>
+      <h1 className="productPrice">£{product.price} </h1>
 
       <button
         type="button"
@@ -54,26 +54,4 @@ export const Product = ({ product, category }) => {
   );
 };
 
-// const handleClick = (item) => {
 
-//   const items = JSON.parse(localStorage.getItem("cartItems"));
-
-//   let obj = {};
-// if(items[item.id]){
-// items[item.id]["quantity"] +=1
-// localStorage.setItem(
-//   "cartItems",
-//   JSON.stringify(items)
-// );
-
-// }else{
-// item.quantity = 1;
-// items[item.id] = item
-
-// localStorage.setItem(
-//  "cartItems",
-//  JSON.stringify(obj)
-// );
-// }
-
-// };

@@ -6,6 +6,9 @@ export const ShoppingCart = () => {
     JSON.parse(localStorage.getItem("cartItems")) 
   );
   
+  const sumWithInitial = Math.ceil(arrayOfCartItems.reduce(
+    (acc, obj) =>  { return acc + obj.price * obj.quantity; }, 0
+  ));
 
   useEffect(() => {
     
@@ -44,13 +47,14 @@ export const ShoppingCart = () => {
       <br />
       {arrayOfCartItems? (
         <>
+        <h2 className="shoppingCartTotal">{arrayOfCartItems.length} Items  </h2><h2 className="totalprice">  Total Price: £{sumWithInitial}</h2>
           {arrayOfCartItems.map((item) => {
             const totalPrice= item.price  * item.quantity;
             
             return (
-              <div className="products" key={item.id}>
-                <h2>{item.title}</h2>
-                <img src={item.image} className="product-column" alt={item.title}/>
+              <div className="productsSC" key={item.id}>
+                <h2 className="productTitle">{item.title}</h2>
+                <img src={item.image} alt={item.title}/>
                 <div className="amountSection">
                   <button
                     onClick={() => handleAdd(item)}
@@ -66,8 +70,9 @@ export const ShoppingCart = () => {
                   >
                     -
                   </button>
-                  <h2>Total Price: £{totalPrice}</h2>
+                 
                 </div>
+                  <h2 >£{totalPrice}</h2>
               </div>
             );
           })}

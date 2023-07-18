@@ -1,3 +1,4 @@
+
 * {
   margin: 0px;
   padding: 0px;
@@ -35,10 +36,51 @@
   object-fit: cover;
 }
 
+.twologos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactSection{
+background-color:#111;;
+padding-top:40px;
+padding-bottom:40px;
+color:rgb(255, 255, 255);
+}
+
+.Section1 {
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+}
+
+.otherSection{
+  text-align: left;
+ 
+}
+
+.socialMedia i {
+  font-size: 40px;
+
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.locationUK{
+font-size:12px;
+}
+
+.section2 h6{
+  font-size:12px;
+}
+
 #navbar {
   display: flex;
   align-items: center;
   justify-content: center;
+  width:100%;
+  float:none;
 }
 
 #navbar li {
@@ -68,11 +110,12 @@
 .carousel {
   width: 350px;
   margin: auto;
-  padding-bottom: 100px;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 .carousel img {
-  height: 400px;
+  height: 300px;
   object-fit: scale-down;
 }
 
@@ -82,7 +125,10 @@
   align-items: center;
   width: 100%;
   overflow-x: scroll;
+ 
+  
 }
+
 
 .containercolumn {
   margin: 20px;
@@ -100,6 +146,7 @@
   display: none;
 }
 
+
 .products {
   padding-left: 40px;
   padding-right: 40px;
@@ -107,7 +154,7 @@
 }
 
 .products img {
-  width: 200px;
+  width: 170px;
   object-fit: scale-down;
 }
 
@@ -115,15 +162,53 @@
   height: 300px;
 }
 
+
+.productsSC {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top:30px;
+  padding-bottom:30px;
+  display: flex;
+  border-top: 1px solid rgb(232, 232, 232);
+  border-bottom: 1px solid rgb(232, 232, 232);
+  margin-left:60px;
+  margin-right:60px;
+
+}
+
+.productsSC img {
+  width: 100px;
+  object-fit: scale-down;
+ 
+
+}
+
+.productTitle {
+  width:50%;
+  padding-left:20px;
+text-align: left;
+  }
+
 .products h1 {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-size: 14px;
   width: 100%;
-  height: 60px;
+ 
 }
 
-.products button {
+.productTitle{
+  height: 60px;
+  
+ 
+}
+.productPrice{
+  padding-bottom:10px;
+}
+
+
+
+.products button, .productsSC button {
   margin-left: 3px;
   margin-right: 3px;
   border: none;
@@ -155,8 +240,9 @@
   color: grey;
   margin: 0;
   font-size: larger;
-  float: right;
-  padding-right: 30px;
+float:right;
+
+
 }
 
 .shoppingCart:hover {
@@ -181,20 +267,58 @@
 .shoppingcarttitle{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 600;
+
 }
 
+.product{
+  margin-left:40px;
+  margin-right:40px;
+}
+
+
 .products h2{
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size:larger;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:18px;
+  text-align: left;
+  
+}
+
+.amountSection{
+  width:200px;
 }
 
 .amountBlock{
   
-  vertical-align: middle;
+  vertical-align:top;
   display: inline-block;
 
 }
 
+.productsSC img {
+  width: 50px;
+  /* object-fit: scale-down; */
+}
+
+.productsSC h2 {
+  
+    font-size: 16px;
+  color:rgb(107, 107, 107);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+}
+
+.shoppingCartTotal{
+  font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.totalpriceSC{
+  color:rgb(88, 88, 88);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+  font-size: 18px;
+}
 
 
 
@@ -214,6 +338,7 @@
     right: -1000px;
     background-color: rgba(255, 255, 255, 0.962);
     transition: 0.8s ease-in-out;
+  
   }
 
   #navbar ul {
@@ -232,15 +357,20 @@
     transition: 0.8s ease-in-out;
   }
 
+ 
+
   .mobile {
     display: block;
     align-items: center;
+float:left;
   }
 
   .mobile i {
     font-size: 24px;
     cursor: pointer;
     padding: 20px;
+    
+    
   }
 
   .mobile i:hover {
@@ -251,9 +381,24 @@
   .shoppingCart {
     margin: 0;
     font-size: large;
-    float: right;
     padding-right: 20px;
   }
+
+  .productsSC{
+    padding-left:20px;
+    padding-right:20px;
+    margin-left:30px;
+    margin-right:30px;
+    
+  }
+
+  .productTitle {
+    width:350px;
+    }
+
+    .amountSection{
+      width:250px;
+    }
 }
 
 @keyframes App-logo-spin {
