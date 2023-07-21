@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-
 import { getProducts } from "../utils/api";
 
 export function CarouselSection() {

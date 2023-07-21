@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import{ContactSection} from "./ContactSection"
+import {SliderSection} from "./Slider"
+
 
 export const ShoppingCart = () => {
   const [arrayOfCartItems, setArrayOfCartItems] = useState(
@@ -42,19 +45,21 @@ export const ShoppingCart = () => {
   
 
   return (
+    <>
+    <SliderSection />
     <div className="shoppingcartcontainer">
       <h1 className="shoppingcarttitle">SHOPPING CART</h1>
       <br />
       {arrayOfCartItems? (
         <>
-        <h2 className="shoppingCartTotal">{arrayOfCartItems.length} Items  </h2><h2 className="totalprice">  Total Price: £{sumWithInitial}</h2>
+        <h2 className="shoppingCartTotal">{arrayOfCartItems.length} Items  </h2><h2 className="totalpriceSC">  Total Price: £{sumWithInitial}</h2>
           {arrayOfCartItems.map((item) => {
             const totalPrice= item.price  * item.quantity;
             
             return (
               <div className="productsSC" key={item.id}>
-                <h2 className="productTitle">{item.title}</h2>
                 <img src={item.image} alt={item.title}/>
+                <h2 className="productSCTitle">{item.title}</h2>
                 <div className="amountSection">
                   <button
                     onClick={() => handleAdd(item)}
@@ -76,6 +81,7 @@ export const ShoppingCart = () => {
               </div>
             );
           })}
+          <div><button className="checkout">Go To Checkout</button></div>
         </>
       ) : (
         <>
@@ -86,6 +92,8 @@ export const ShoppingCart = () => {
           </Link>
         </>
       )}
+      <ContactSection />
     </div>
+    </>
   );
 };
