@@ -10,7 +10,7 @@ export const Categories = () => {
     getCategories().then((res) => {
       setCategrories(res);
     });
-  }, []);
+  }, [categories]);
 
   return (
     <div className="containercolumn">
