@@ -170,6 +170,9 @@ font-size:12px;
 
 .containercolumn {
   margin: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
+
 }
 
 .containercolumn h1{
@@ -462,6 +465,14 @@ float:left;
 
     .amountSection{
       width:250px;
+    }
+
+
+    .containercolumn {
+      margin: 20px;
+      margin-left: 40px;
+      margin-right: 40px;
+    
     }
 }
 
